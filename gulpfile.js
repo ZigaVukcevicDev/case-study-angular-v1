@@ -4,10 +4,10 @@ var notify = require('gulp-notify');
 var webserver = require('gulp-webserver');
 var concat = require('gulp-concat');
 
-gulp.task('move', function() {
+gulp.task('copy', function() {
     gulp.src(['./src/index.html'])
         .pipe(gulp.dest('./dist'))
-        .pipe(notify('Uspešno sem skopiral HTML'));
+        .pipe(notify('Copied index.html to dist folder'));
 
     gulp.src(['!./src/index.html', 'src/**/*.html'])
         .pipe(flatten())
@@ -15,12 +15,11 @@ gulp.task('move', function() {
         .pipe(notify('Uspešno sem skopiral temp'));
 
     gulp.src([
-        'bower_components/angular/angular.min.js',
-        'bower_components/bootstrap/dist/css/bootstrap.min.css'
+        'node_modules/angular/angular.min.js',
+        // 'bower_components/bootstrap/dist/css/bootstrap.min.css'
     ])
         .pipe(gulp.dest('./dist/vendor'))
-        .pipe(notify('Uspešno sem skopiral Angular in Bootstrap'));
-
+        .pipe(notify('Copied libraries to dist/vendor folder'));
 });
 
 gulp.task('scripts', function() {
@@ -39,8 +38,8 @@ gulp.task('serve', function() {
 });
 
 gulp.task('watch', ['serve'], function() {
-    gulp.start(['scripts', 'move']);
+    gulp.start(['scripts', 'copy']);
 
     gulp.watch(['./src/**/*.js'], ['scripts']);
-    gulp.watch(['./src/**/*.html'], ['move']);
+    gulp.watch(['./src/**/*.html'], ['copy']);
 });
