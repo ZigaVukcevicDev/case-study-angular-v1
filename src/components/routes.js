@@ -1,5 +1,3 @@
-//  Add ui-router as a dependency
-angular.module('app', ['ui.router']);
 angular.module('app').config(function($stateProvider, $urlRouterProvider){
 
     //  If a user goes to an url that doesn't have a valid state assigned
@@ -55,17 +53,3 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider){
 
 });
 
-
-angular.module('app').controller('ExampleController', function($scope){
-
-	$scope.example = 'Example from ExampleController';
-
-});
-angular.module('app').directive('appExample', function(){
-	return {
-		restrict: 'E',
-		scope:{},
-		controller: 'ExampleController',
-		templateUrl: 'templates/example-template.html'
-	};
-});

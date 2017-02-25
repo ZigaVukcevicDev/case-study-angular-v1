@@ -1,8 +1,49 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Moj prvi Bower, NPS ter GULP projekt</title>
+    <meta charset="utf-8">
+
+    <title>SmartNinja project</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="js/all.js"></script>
 </head>
-<body>
-<h1>Testni projekt 123</h1>
+
+<body ng-app="app">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 jumbotron">
+            <h1>SmartNinja project</h1>
+
+            <app-example></app-example>
+
+
+            <div class="well">
+                <!-- Navbar -->
+                <a ui-sref="home">Home</a>
+                <a ui-sref="login">Login</a>
+                <a ui-sref="error">Error</a>
+                <a ui-sref="parent">Parent</a>
+
+                <!-- Linking to nested state -->
+                <a ui-sref="parent.child">Nested state</a>
+
+                <!-- Linking to a state with added parameters -->
+                <a ui-sref="parameter({name: 'Bob'})">Go to state and pass Bob</a>
+            </div>
+
+
+            <!-- Load all templates and templateUrls from states into this directive -->
+            <div class="well">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

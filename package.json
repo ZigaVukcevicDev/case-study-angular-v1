@@ -1,6 +1,6 @@
 {
-  "name": "angular-v1",
-  "version": "0.0.1",
+  "name": "01-base_project",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.5",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap": "^3.3.7",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-flatten": "^0.3.1",
