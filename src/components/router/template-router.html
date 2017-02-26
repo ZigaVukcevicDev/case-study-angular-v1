@@ -1,0 +1,30 @@
+<h2>UI-Router</h2>
+
+<p>UI-Router is the defacto standard for routing in AngularJS.</p>
+
+<pre><code class="hljs javascript">
+    angular.module('uiRouterExample', [ui.router])
+        .config(function($stateProvider, $urlRouterProvider) {
+            $stateProvider
+                .state('home', {
+                    url: '/home',
+                    templateUrl: 'templates/home.html'
+                }
+            );
+        });
+</code></pre>
+
+<pre><code class="hljs html">
+    <h3>test</h3>
+</code></pre>
+
+
+<hr />
+<h3>Resources</h3>
+<ul>
+    <li>
+        <a href="https://ui-router.github.io/ng1/" target="_blank">
+            UI-Router for AngularJS (1.x)
+        </a>
+    </li>
+</ul>
