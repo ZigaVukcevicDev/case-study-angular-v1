@@ -2,6 +2,7 @@
 
 <p>UI-Router is the defacto standard for routing in AngularJS.</p>
 
+<p>We are using <strong>.config</strong> method to set up what url should use which template (or. template file).</p>
 <pre><code class="hljs javascript">
     angular.module('uiRouterExample', [ui.router])
         .config(function($stateProvider, $urlRouterProvider) {
@@ -14,12 +15,24 @@
         });
 </code></pre>
 
-<pre><code class="hljs html">
-    <h3>test</h3>
+<p>We can redirect all routes which are not available to just go to home route</p>
+<pre><code class="hljs javascript">
+    angular.module('app')
+        .config(function($stateProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('/home');
+    });
 </code></pre>
 
+<p>Using links</p>
+<pre><code class="hljs xml">
+    &lt;a ui-sref="home"&gt;Home&lt;/a&gt;
+</code></pre>
 
-<hr />
+<p>For outputting content we are using directive.</p>
+<pre><code class="hljs xml">
+    &lt;ui-view&gt;&lt;/ui-view&gt;
+</code></pre>
+
 <h3>Resources</h3>
 <ul>
     <li>
